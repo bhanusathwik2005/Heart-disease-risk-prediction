@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Heart Disease Risk Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+<header class="header">
+    <h1>Heart Disease Risk Prediction System</h1>
+    <p>Machine Learning Based Health Assessment Tool</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>Patient Health Details</h2>
+
+    <form action="/predict" method="post" class="form-grid">
+
+        <!-- Age -->
+        <input type="number" name="age" placeholder="Age" required>
+
+        <!-- Gender -->
+        <select name="sex" required>
+            <option value="">Gender</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <!-- Chest Pain -->
+        <select name="cp" required>
+            <option value="">Type of Chest Discomfort</option>
+            <option value="0">Chest pain during physical work</option>
+            <option value="1">Chest pain sometimes</option>
+            <option value="2">Chest pain due to gas or muscle</option>
+            <option value="3">No chest pain</option>
+        </select>
+
+        <!-- Blood Pressure -->
+        <input type="number" name="trestbps" placeholder="Resting Blood Pressure (mm Hg)" required>
+
+        <!-- Cholesterol -->
+        <input type="number" name="chol" placeholder="Cholesterol Level (mg/dl)" required>
+
+        <!-- Fasting Blood Sugar -->
+        <select name="fbs" required>
+            <option value="">Fasting Blood Sugar</option>
+            <option value="1">High (>120 mg/dl)</option>
+            <option value="0">Normal</option>
+        </select>
+
+        <!-- ECG -->
+        <select name="restecg" required>
+            <option value="">ECG Result</option>
+            <option value="0">Normal</option>
+            <option value="1">Minor abnormality</option>
+            <option value="2">Heart muscle enlargement</option>
+        </select>
+
+        <!-- Heart Rate -->
+        <input type="number" name="thalach" placeholder="Maximum Heart Rate Achieved" required>
+
+        <!-- Exercise Angina -->
+        <select name="exang" required>
+            <option value="">Chest pain during exercise?</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <!-- Oldpeak -->
+        <input type="number" step="any" name="oldpeak"
+               placeholder="Stress test value (from medical report)" required>
+
+        <!-- Slope -->
+        <select name="slope" required>
+            <option value="">Heart recovery after exercise</option>
+            <option value="0">Normal recovery</option>
+            <option value="1">Slow recovery</option>
+            <option value="2">Poor recovery</option>
+        </select>
+
+        <!-- CA -->
+        <input type="number" name="ca" min="0" max="3"
+               placeholder="Blocked blood vessels (from scan report)" required>
+
+        <!-- Thal -->
+        <select name="thal" required>
+            <option value="">Blood flow condition</option>
+            <option value="1">Normal</option>
+            <option value="2">Minor problem</option>
+            <option value="3">Major problem</option>
+        </select>
+
+        <!-- Submit Button -->
+        <div class="full-width">
+            <button type="submit">Predict Heart Disease Risk</button>
+        </div>
+
+    </form>
+</div>
+
+</div>
+
+<footer class="footer">
+    <p>(c) 2026 Heart Disease Prediction System | Academic Project</p>
+</footer>
+
+</div>
+
+</body>
+</html>
