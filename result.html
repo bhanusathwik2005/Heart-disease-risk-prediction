@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+    <h2>Heart Disease Detection Result</h2>
+
+    {% if disease_result == "YES" %}
+        <p style="color:red; font-size:24px;">
+            Heart Disease Detected: YES
+        </p>
+    {% else %}
+        <p style="color:green; font-size:24px;">
+            Heart Disease Detected: NO
+        </p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h2>Risk Summary</h2>
+    <p><b>Risk Percentage:</b> {{ probability }}%</p>
+    <p><b>Risk Level:</b> <span style="color:{{ risk_color }}">{{ risk_level }}</span></p>
+    <p><b>Age Category:</b> {{ "Above 50" if age > 50 else "50 or Below" }}</p>
+</div>
+
+<div class="card">
+    <h2>Main Risk Factors</h2>
+    <ul>
+        {% for r in reasons %}
+        <li>{{ r }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Health Recommendations</h2>
+    <ul>
+        {% for a in advice %}
+        <li>{{ a }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <a href="/" style="text-decoration:none;">
+        🔙 Go Back to Input Page
+    </a>
+</div>
+
+</div>
+
+</body>
+</html>
